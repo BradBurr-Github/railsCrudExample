@@ -2,6 +2,8 @@
   <h1>Listing Employees</h1>
   <br/><br/>
 
+  <a href="<%= employee_new_path %>">Insert New Employee</a>
+
   <% if @employees.present? %>
   <table class="table">
     <thead>
@@ -24,8 +26,11 @@
         <td><%= employee.phone %></td>
         <td><%= employee.email %></td>
         <td><%= employee.notes %></td>
-        <td><a href="<%= employee_path(employee) %>" >Details</a> | </td>
-        <td><a href="<%= edit_employee_path(employee) %>" >Edit</a></td>
+        <td>
+          <a href="<%= employee_path(employee) %>" >Details</a> |
+          <a href="<%= edit_employee_path(employee) %>" >Edit</a> |
+          <a href="<%= delete_employee_path(employee) %>" >Delete</a>
+        </td>
       </tr>
     <% end %>
   </tbody>
